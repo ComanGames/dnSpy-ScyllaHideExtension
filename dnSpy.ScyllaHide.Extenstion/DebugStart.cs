@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition;
+﻿using System.ComponentModel.Composition;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+using System.Windows.Threading;
 using dnSpy.Contracts.App;
 using dnSpy.Contracts.Debugger;
-using dnSpy.Contracts.Debugger.References;
 
 namespace dnSpy.ScyllaHide {
 	[Export(typeof(IDbgManagerStartListener))]
@@ -17,9 +12,10 @@ namespace dnSpy.ScyllaHide {
 		public static DbgManager dbg;
 		public void OnStart(DbgManager dbgManager) {
 
-			dbg = dbgManager;
+		    MsgBox.Instance.Show("Some message");
+            dbg = dbgManager;
 			 main = SynchronizationContext.Current;
-			dbgManager.DelayedIsRunningChanged += (sender, args) => { ShowCountOfProcesses(dbgManager); };
+			dbgManager.DelayedIsRunningChanged += (sender, args) => { Dispatcher.Run(); ShowCountOfProcesses(dbgManager); };
 		}
 
 		private static void ShowCountOfProcesses(DbgManager dbgManager)
@@ -27,19 +23,21 @@ namespace dnSpy.ScyllaHide {
 			if (dbgManager?.IsRunning==true&&dbgManager.Processes.Length>0) {
 				ulong pid = dbgManager.Processes[0].Id;
 				StartScyllaDide(pid);
-				Thread.Sleep(1000);
 			}
 		}
 
 		private static void StartScyllaDide(ulong proccessId) {
-			string scyllaProg = @"C:\MyPograms\ScyllaHide\InjectorCLIx64.exe";
+            string scyllaProg = @"C:\MyPrograms\ScyllaHide\InjectorCLIx64.exe";
 
 			ProcessStartInfo startInfo = new ProcessStartInfo();
 			startInfo.FileName = scyllaProg;
 			string dll = @"C:\MyPograms\ScyllaHide\HookLibraryx64.dll";	
 			startInfo.Arguments = $"pid:{proccessId} {dll}";
 			startInfo.CreateNoWindow = true;
-			Process.Start(startInfo);
-		}
+            // start the Dispatcher processing  
+            Dispatcher.Run();
+            Process.Start(startInfo);
+
+            }
 	}
-}
+} 
