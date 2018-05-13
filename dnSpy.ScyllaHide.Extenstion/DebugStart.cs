@@ -12,30 +12,30 @@ namespace dnSpy.ScyllaHide {
 		public static DbgManager dbg;
 		public void OnStart(DbgManager dbgManager) {
 
-		    MsgBox.Instance.Show("Some message");
+		    MsgBox.Instance.Show("Debug manager on start");
             dbg = dbgManager;
 			 main = SynchronizationContext.Current;
-			dbgManager.DelayedIsRunningChanged += (sender, args) => { Dispatcher.Run(); ShowCountOfProcesses(dbgManager); };
+			dbgManager.DelayedIsRunningChanged += (sender, args) => { ShowCountOfProcesses(dbgManager); };
 		}
 
 		private static void ShowCountOfProcesses(DbgManager dbgManager)
 		{
+
 			if (dbgManager?.IsRunning==true&&dbgManager.Processes.Length>0) {
 				ulong pid = dbgManager.Processes[0].Id;
 				StartScyllaDide(pid);
+                Thread.Sleep(1000);
 			}
 		}
 
 		private static void StartScyllaDide(ulong proccessId) {
             string scyllaProg = @"C:\MyPrograms\ScyllaHide\InjectorCLIx64.exe";
-
+            main.Post(o => { MsgBox.Instance.Show("process ID + " + proccessId); } ,null);
 			ProcessStartInfo startInfo = new ProcessStartInfo();
 			startInfo.FileName = scyllaProg;
-			string dll = @"C:\MyPograms\ScyllaHide\HookLibraryx64.dll";	
+			string dll = @"C:\MyPrograms\ScyllaHide\HookLibraryx64.dll";	
 			startInfo.Arguments = $"pid:{proccessId} {dll}";
 			startInfo.CreateNoWindow = true;
-            // start the Dispatcher processing  
-            Dispatcher.Run();
             Process.Start(startInfo);
 
             }
