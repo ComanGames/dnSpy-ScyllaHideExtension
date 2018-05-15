@@ -31,16 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dnlib">
+      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnlib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="dnSpy.Contracts.Debugger">
       <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Contracts.Debugger.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Contracts.Debugger.DotNet">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Contracts.Debugger.DotNet.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Contracts.Debugger.DotNet.Mono">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Contracts.Debugger.DotNet.Mono.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="dnSpy.Contracts.DnSpy">
@@ -51,46 +47,12 @@
       <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Contracts.Logic.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="dnSpy.Debugger.DotNet.Interpreter">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Debugger.DotNet.Interpreter.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Debugger.DotNet.Metadata">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Debugger.DotNet.Metadata.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Debugger.DotNet.Mono.x">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Debugger.DotNet.Mono.x.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Debugger.DotNet.x">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Debugger.DotNet.x.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Debugger.x">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Debugger.x.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Decompiler">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Decompiler.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Decompiler.ILSpy.Core">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Decompiler.ILSpy.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Decompiler.ILSpy.x">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Decompiler.ILSpy.x.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="dnSpy.Scripting.Roslyn.x">
-      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Scripting.Roslyn.x.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,8 +64,19 @@
   <ItemGroup>
     <Compile Include="DebugStart.cs" />
     <Compile Include="MainMenuCommands.cs" />
+    <Compile Include="MySettings.cs" />
+    <Compile Include="MySettingsControl.xaml.cs">
+      <DependentUpon>MySettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MySettingsPage.cs" />
     <Compile Include="TheExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MySettingsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
