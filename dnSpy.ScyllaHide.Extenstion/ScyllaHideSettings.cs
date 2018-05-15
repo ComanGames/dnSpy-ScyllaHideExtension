@@ -88,7 +88,6 @@ namespace dnSpy.ScyllaHide {
 				return;
 
 			// Save the settings
-
 			var sect = settingsService.RecreateSection(SETTINGS_GUID);
 			sect.Attribute(nameof(IsEnabledOption), IsEnabledOption);
 			sect.Attribute(nameof(SelectedProfile), SelectedProfile);

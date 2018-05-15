@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnSpy.ScyllaHide.Extension"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1.Extension", "Example1.Extension\Example1.Extension.csproj", "{B24AAB0F-CA85-4D85-8B46-10D634896E2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2.Extension", "Example2.Extension\Example2.Extension.csproj", "{4613C8A1-28DC-4586-9F9B-D201864CFE1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
