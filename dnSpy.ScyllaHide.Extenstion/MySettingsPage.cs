@@ -4,25 +4,25 @@ using System.ComponentModel.Composition;
 using dnSpy.Contracts.Images;
 using dnSpy.Contracts.Settings.Dialog;
 
-// Adds an options dialog box page showing settings saved in MySettings
+// Adds an options dialog box page showing settings saved in ScyllaHideSettings
 
 namespace dnSpy.ScyllaHide {
 	// This instance gets called by dnSpy to create the page each time the user opens the options dialog
 	[Export(typeof(IAppSettingsPageProvider))]	// Tell MEF we're exporting this instance
-	sealed class MyAppSettingsPageProvider : IAppSettingsPageProvider {
-		readonly MySettings mySettings;
+	sealed class SccyllaHideSettingsPageProvider : IAppSettingsPageProvider {
+		readonly ScyllaHideSettings _scyllaHideSettings;
 
-		// This constructor gets the single MySettingsImpl instance exported by MySettingsImpl in MySettings.cs
+		// This constructor gets the single ScyllaHideSettingsImpl instance exported by ScyllaHideSettingsImpl in ScyllaHideSettings.cs
 		[ImportingConstructor]
-		MyAppSettingsPageProvider(MySettings mySettings) => this.mySettings = mySettings;
+		SccyllaHideSettingsPageProvider(ScyllaHideSettings scyllaHideSettings) => this._scyllaHideSettings = scyllaHideSettings;
 
 		public IEnumerable<AppSettingsPage> Create() {
 			// We only create one page
-			yield return new MyAppSettingsPage(mySettings);
+			yield return new ScyllaHideSettingsPage(_scyllaHideSettings);
 		}
 	}
 
-	sealed class MyAppSettingsPage : AppSettingsPage {
+	sealed class ScyllaHideSettingsPage : AppSettingsPage {
 		//TODO: Use your own GUID
 		static readonly Guid THE_GUID = new Guid("AE905210-A789-4AE2-B83B-537515D9F435");
 
@@ -54,12 +54,12 @@ namespace dnSpy.ScyllaHide {
 		}
 		MySettingsControl uiObject;
 
-		readonly MySettings globalSettings;
-		readonly MySettings newSettings;
+		readonly ScyllaHideSettings globalSettings;
+		readonly ScyllaHideSettings newSettings;
 
-		public MyAppSettingsPage(MySettings mySettings) {
-			globalSettings = mySettings;
-			newSettings = mySettings.Clone();
+		public ScyllaHideSettingsPage(ScyllaHideSettings scyllaHideSettings) {
+			globalSettings = scyllaHideSettings;
+			newSettings = scyllaHideSettings.Clone();
 		}
 
 		public override void OnApply() =>

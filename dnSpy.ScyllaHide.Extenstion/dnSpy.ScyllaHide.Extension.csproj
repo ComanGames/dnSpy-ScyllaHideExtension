@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="DebugStart.cs" />
     <Compile Include="MainMenuCommands.cs" />
-    <Compile Include="MySettings.cs" />
+    <Compile Include="ScyllaHideSettings.cs" />
     <Compile Include="MySettingsControl.xaml.cs">
       <DependentUpon>MySettingsControl.xaml</DependentUpon>
     </Compile>

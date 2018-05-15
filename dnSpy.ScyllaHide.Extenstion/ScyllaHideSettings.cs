@@ -6,7 +6,7 @@ using dnSpy.Contracts.Settings;
 // Reads and writes the extension settings
 
 namespace dnSpy.ScyllaHide {
-	class MySettings : ViewModelBase {
+	class ScyllaHideSettings : ViewModelBase {
 		// overridden by the global settings class. Hooking the PropertyChanged event could be used too
 		protected virtual void OnModified() {
 		}
@@ -47,9 +47,9 @@ namespace dnSpy.ScyllaHide {
 		}
 		string stringOption3 = string.Empty;
 
-		public MySettings Clone() => CopyTo(new MySettings());
+		public ScyllaHideSettings Clone() => CopyTo(new ScyllaHideSettings());
 
-		public MySettings CopyTo(MySettings other) {
+		public ScyllaHideSettings CopyTo(ScyllaHideSettings other) {
 			other.IsEnabledOption = IsEnabledOption;
 			other.SelectedProfile = SelectedProfile;
 			other.StringOption3 = StringOption3;
@@ -58,8 +58,8 @@ namespace dnSpy.ScyllaHide {
 	}
 
 	// Export this class so it can be imported by other classes in this extension
-	[Export(typeof(MySettings))]
-	sealed class MySettingsImpl : MySettings {
+	[Export(typeof(ScyllaHideSettings))]
+	sealed class ScyllaHideSettingsImpl : ScyllaHideSettings {
 		//TODO: Use your own guid
 		static readonly Guid SETTINGS_GUID = new Guid("A308405D-0DF5-4C56-8B1E-8CE7BA6365E1");
 
@@ -67,7 +67,7 @@ namespace dnSpy.ScyllaHide {
 
 		// Tell MEF to pass in the required ISettingsService instance exported by dnSpy
 		[ImportingConstructor]
-		MySettingsImpl(ISettingsService settingsService) {
+		ScyllaHideSettingsImpl(ISettingsService settingsService) {
 			this.settingsService = settingsService;
 
 			// Read the settings from the file or use the default values if our settings haven't
