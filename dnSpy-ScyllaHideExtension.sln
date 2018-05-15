@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnSpy.ScyllaHide.Extension", "dnSpy.ScyllaHide.Extenstion\dnSpy.ScyllaHide.Extension.csproj", "{A2236119-6801-4240-98CF-32E6D408FD5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1.Extension", "Example1.Extension\Example1.Extension.csproj", "{B24AAB0F-CA85-4D85-8B46-10D634896E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A2236119-6801-4240-98CF-32E6D408FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2236119-6801-4240-98CF-32E6D408FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2236119-6801-4240-98CF-32E6D408FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

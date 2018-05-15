@@ -73,7 +73,7 @@ namespace Example1.Extension {
 			var md = GetTokenObj(context);
 			if (md != null) {
 				try {
-					Clipboard.SetText($"{md.MDToken.Raw:X8}");
+					Clipboard.SetText(string.Format("{0:X8}", md.MDToken.Raw));
 				}
 				catch (ExternalException) { }
 			}
@@ -83,7 +83,7 @@ namespace Example1.Extension {
 			var md = GetTokenObj(context);
 			if (md == null)
 				return "Copy token";
-			return $"Copy token {md.MDToken.Raw:X8}";
+			return string.Format("Copy token {0:X8}", md.MDToken.Raw);
 		}
 
 		IMDTokenProvider GetTokenObj(IMenuItemContext context) {
@@ -111,7 +111,7 @@ namespace Example1.Extension {
 			if (documentViewer != null) {
 				try {
 					var lineColumn = GetLineColumn(documentViewer.Caret.Position.VirtualBufferPosition);
-					Clipboard.SetText($"Line,col: {lineColumn.Line + 1},{lineColumn.Column + 1}");
+					Clipboard.SetText(string.Format("Line,col: {0},{1}", lineColumn.Line + 1, lineColumn.Column + 1));
 				}
 				catch (ExternalException) { }
 			}
@@ -122,7 +122,7 @@ namespace Example1.Extension {
 			if (documentViewer == null)
 				return "Copy line and column";
 			var lineColumn = GetLineColumn(documentViewer.Caret.Position.VirtualBufferPosition);
-			return $"Copy line,col {lineColumn.Line + 1},{lineColumn.Column + 1}";
+			return string.Format("Copy line,col {0},{1}", lineColumn.Line + 1, lineColumn.Column + 1);
 		}
 
 		LineColumn GetLineColumn(VirtualSnapshotPoint point) {
