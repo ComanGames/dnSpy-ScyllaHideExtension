@@ -4,7 +4,7 @@ using dnSpy.Contracts.Menus;
 // Adds a new "_Extension" menu and several commands.
 // Adds a command to the View menu
 
-namespace Example1.Extension {
+namespace dnSpy.ScyllaHide {
 	static class MainMenuConstants {
 		//TODO: Use your own guids
 		public const string APP_MENU_EXTENSION = "4E6829A6-AEA0-4803-9344-D19BF0A74DA1";

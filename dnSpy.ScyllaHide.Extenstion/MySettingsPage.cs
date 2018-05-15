@@ -6,7 +6,7 @@ using dnSpy.Contracts.Settings.Dialog;
 
 // Adds an options dialog box page showing settings saved in MySettings
 
-namespace Example1.Extension {
+namespace dnSpy.ScyllaHide {
 	// This instance gets called by dnSpy to create the page each time the user opens the options dialog
 	[Export(typeof(IAppSettingsPageProvider))]	// Tell MEF we're exporting this instance
 	sealed class MyAppSettingsPageProvider : IAppSettingsPageProvider {

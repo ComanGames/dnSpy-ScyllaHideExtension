@@ -5,35 +5,35 @@ using dnSpy.Contracts.Settings;
 
 // Reads and writes the extension settings
 
-namespace Example1.Extension {
+namespace dnSpy.ScyllaHide {
 	class MySettings : ViewModelBase {
 		// overridden by the global settings class. Hooking the PropertyChanged event could be used too
 		protected virtual void OnModified() {
 		}
 
-		public bool BoolOption1 {
-			get { return boolOption1; }
+		public bool IsEnabledOption {
+			get { return _isEnabledOption; }
 			set {
-				if (boolOption1 != value) {
-					boolOption1 = value;
-					OnPropertyChanged(nameof(BoolOption1));
+				if (_isEnabledOption != value) {
+					_isEnabledOption = value;
+					OnPropertyChanged(nameof(IsEnabledOption));
 					OnModified();
 				}
 			}
 		}
-		bool boolOption1 = true;
+		bool _isEnabledOption = true;
 
-		public bool BoolOption2 {
-			get { return boolOption2; }
+		public int SelectedProfile {
+			get { return _selectedProfile; }
 			set {
-				if (boolOption2 != value) {
-					boolOption2 = value;
-					OnPropertyChanged(nameof(BoolOption2));
+				if (_selectedProfile != value) {
+					_selectedProfile = value;
+					OnPropertyChanged(nameof(SelectedProfile));
 					OnModified();
 				}
 			}
 		}
-		bool boolOption2 = false;
+		int _selectedProfile = 0;
 
 		public string StringOption3 {
 			get { return stringOption3; }
@@ -50,8 +50,8 @@ namespace Example1.Extension {
 		public MySettings Clone() => CopyTo(new MySettings());
 
 		public MySettings CopyTo(MySettings other) {
-			other.BoolOption1 = BoolOption1;
-			other.BoolOption2 = BoolOption2;
+			other.IsEnabledOption = IsEnabledOption;
+			other.SelectedProfile = SelectedProfile;
 			other.StringOption3 = StringOption3;
 			return other;
 		}
@@ -75,8 +75,8 @@ namespace Example1.Extension {
 
 			disableSave = true;
 			var sect = settingsService.GetOrCreateSection(SETTINGS_GUID);
-			BoolOption1 = sect.Attribute<bool?>(nameof(BoolOption1)) ?? BoolOption1;
-			BoolOption2 = sect.Attribute<bool?>(nameof(BoolOption2)) ?? BoolOption2;
+			IsEnabledOption = sect.Attribute<bool?>(nameof(IsEnabledOption)) ?? IsEnabledOption;
+			SelectedProfile = sect.Attribute<int?>(nameof(SelectedProfile)) ?? SelectedProfile;
 			StringOption3 = sect.Attribute<string>(nameof(StringOption3)) ?? StringOption3;
 			disableSave = false;
 		}
@@ -90,8 +90,8 @@ namespace Example1.Extension {
 			// Save the settings
 
 			var sect = settingsService.RecreateSection(SETTINGS_GUID);
-			sect.Attribute(nameof(BoolOption1), BoolOption1);
-			sect.Attribute(nameof(BoolOption2), BoolOption2);
+			sect.Attribute(nameof(IsEnabledOption), IsEnabledOption);
+			sect.Attribute(nameof(SelectedProfile), SelectedProfile);
 			sect.Attribute(nameof(StringOption3), StringOption3);
 		}
 	}
