@@ -6,7 +6,7 @@ using dnSpy.Contracts.Extension;
 
 namespace dnSpy.ScyllaHide {
 	[ExportExtension]
-	sealed class TheExtension : IExtension {
+	sealed class ScyllaHideExtension : IExtension {
 		public IEnumerable<string> MergedResourceDictionaries {
 			get {
 				// We don't have any extra resource dictionaries

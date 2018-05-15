@@ -46,13 +46,13 @@ namespace dnSpy.ScyllaHide {
 		public override object UIObject {
 			get {
 				if (uiObject == null) {
-					uiObject = new MySettingsControl();
+					uiObject = new ScyllaHideSettingsControl();
 					uiObject.DataContext = newSettings;
 				}
 				return uiObject;
 			}
 		}
-		MySettingsControl uiObject;
+		ScyllaHideSettingsControl uiObject;
 
 		readonly ScyllaHideSettings globalSettings;
 		readonly ScyllaHideSettings newSettings;

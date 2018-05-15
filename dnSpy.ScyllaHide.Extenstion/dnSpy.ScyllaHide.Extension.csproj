@@ -65,15 +65,15 @@
     <Compile Include="DebugStart.cs" />
     <Compile Include="MainMenuCommands.cs" />
     <Compile Include="ScyllaHideSettings.cs" />
-    <Compile Include="MySettingsControl.xaml.cs">
-      <DependentUpon>MySettingsControl.xaml</DependentUpon>
+    <Compile Include="ScyllaHideSettingsControl.xaml.cs">
+      <DependentUpon>ScyllaHideSettingsControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MySettingsPage.cs" />
-    <Compile Include="TheExtension.cs" />
+    <Compile Include="ScyllaHideSettingsPage.cs" />
+    <Compile Include="ScyllaHideExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MySettingsControl.xaml">
+    <Page Include="ScyllaHideSettingsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
