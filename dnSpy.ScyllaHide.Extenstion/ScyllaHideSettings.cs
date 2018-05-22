@@ -6,8 +6,8 @@ using dnSpy.Contracts.Settings;
 // Reads and writes the extension settings
 
 namespace dnSpy.ScyllaHide {
-	class ScyllaHideSettings : ViewModelBase {
-		// overridden by the global settings class. Hooking the PropertyChanged event could be used too
+	class ScyllaHideSettings : ViewModelBase
+	{
 		protected virtual void OnModified() {
 		}
 
@@ -61,9 +61,8 @@ namespace dnSpy.ScyllaHide {
 	[Export(typeof(ScyllaHideSettings))]
 	sealed class ScyllaHideSettingsImpl : ScyllaHideSettings {
 		//TODO: Use your own guid
-		static readonly Guid SETTINGS_GUID = new Guid("A308405D-0DF5-4C56-8B1E-8CE7BA6365E1");
 
-		readonly ISettingsService settingsService;
+	    readonly ISettingsService settingsService;
 
 		// Tell MEF to pass in the required ISettingsService instance exported by dnSpy
 		[ImportingConstructor]
@@ -74,7 +73,7 @@ namespace dnSpy.ScyllaHide {
 			// been saved to it yet.
 
 			disableSave = true;
-			var sect = settingsService.GetOrCreateSection(SETTINGS_GUID);
+			var sect = settingsService.GetOrCreateSection(ScyllaHideExtensionGlobalInfo.SETTINGS_GUID);
 			IsEnabledOption = sect.Attribute<bool?>(nameof(IsEnabledOption)) ?? IsEnabledOption;
 			SelectedProfile = sect.Attribute<int?>(nameof(SelectedProfile)) ?? SelectedProfile;
 			StringOption3 = sect.Attribute<string>(nameof(StringOption3)) ?? StringOption3;
@@ -88,7 +87,7 @@ namespace dnSpy.ScyllaHide {
 				return;
 
 			// Save the settings
-			var sect = settingsService.RecreateSection(SETTINGS_GUID);
+			var sect = settingsService.RecreateSection(ScyllaHideExtensionGlobalInfo.SETTINGS_GUID);
 			sect.Attribute(nameof(IsEnabledOption), IsEnabledOption);
 			sect.Attribute(nameof(SelectedProfile), SelectedProfile);
 			sect.Attribute(nameof(StringOption3), StringOption3);

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="DebugStart.cs" />
     <Compile Include="MainMenuCommands.cs" />
+    <Compile Include="ScyllaHideExtensionGlobalInfo.cs" />
     <Compile Include="ScyllaHideSettings.cs" />
     <Compile Include="ScyllaHideSettingsControl.xaml.cs">
       <DependentUpon>ScyllaHideSettingsControl.xaml</DependentUpon>

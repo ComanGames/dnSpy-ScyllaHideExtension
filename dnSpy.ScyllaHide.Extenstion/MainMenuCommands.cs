@@ -1,4 +1,5 @@
-﻿using dnSpy.Contracts.App;
+﻿using System.ComponentModel.Composition;
+using dnSpy.Contracts.App;
 using dnSpy.Contracts.Menus;
 
 // Adds a new "_Extension" menu and several commands.
@@ -19,7 +20,7 @@ namespace dnSpy.ScyllaHide {
 
 	[ExportMenuItem(OwnerGuid = MainMenuConstants.APP_MENU_EXTENSION, Header = "Start ScyllaHide", Group = MainMenuConstants.GROUP_EXTENSION_MENU1, Order = 0)]
 	sealed class ExtensionCommand1 : MenuItemBase {
-		public override void Execute(IMenuItemContext context) => MsgBox.Instance.Show("Hello world");
+		public override void Execute(IMenuItemContext context) => MsgBox.Instance.Show($"Hello");
 	}
 
 }
