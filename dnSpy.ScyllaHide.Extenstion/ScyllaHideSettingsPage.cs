@@ -23,8 +23,8 @@ namespace dnSpy.ScyllaHide {
 	}
 
 	sealed class ScyllaHideSettingsPage : AppSettingsPage {
-		//TODO: Use your own GUID
-		static readonly Guid THE_GUID = new Guid("AE905210-A789-4AE2-B83B-537515D9F435");
+
+		static readonly Guid THE_GUID = new Guid("7F406C01-4F42-48A9-B935-1522CD3AAE1B");
 
 		// Guid of parent page or Guid.Empty if it has none
 		public override Guid ParentGuid => Guid.Empty;

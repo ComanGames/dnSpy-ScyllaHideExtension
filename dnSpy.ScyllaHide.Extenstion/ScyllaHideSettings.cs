@@ -60,13 +60,12 @@ namespace dnSpy.ScyllaHide {
 	// Export this class so it can be imported by other classes in this extension
 	[Export(typeof(ScyllaHideSettings))]
 	sealed class ScyllaHideSettingsImpl : ScyllaHideSettings {
-		//TODO: Use your own guid
 
 	    readonly ISettingsService settingsService;
 
 		// Tell MEF to pass in the required ISettingsService instance exported by dnSpy
 		[ImportingConstructor]
-		ScyllaHideSettingsImpl(ISettingsService settingsService) {
+		 ScyllaHideSettingsImpl(ISettingsService settingsService) {
 			this.settingsService = settingsService;
 
 			// Read the settings from the file or use the default values if our settings haven't
