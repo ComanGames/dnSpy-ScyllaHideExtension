@@ -14,15 +14,17 @@ namespace dnSpy.ScyllaHide {
 		public static SynchronizationContext main;
 		public static DbgManager dbg;
 
-		[Import]
+	    [Import]
 		protected ScyllaHideSettings ProgrammSettings { get; set; }
 
-	public void OnStart(DbgManager dbgManager) {
+		public void OnStart(DbgManager dbgManager) {
 
-		    MsgBox.Instance.Show($"Extension is: {ProgrammSettings.IsEnabledOption}");
             dbg = dbgManager;
-			 main = SynchronizationContext.Current;
-			dbgManager.DelayedIsRunningChanged += (sender, args) => { ShowCountOfProcesses(dbgManager); };
+		    main = SynchronizationContext.Current;
+		    if (ProgrammSettings.IsEnabledOption)
+			{
+				dbgManager.DelayedIsRunningChanged += (sender, args) => { ShowCountOfProcesses(dbgManager); };
+			}
 		}
 
 		private static void ShowCountOfProcesses(DbgManager dbgManager)
@@ -37,7 +39,9 @@ namespace dnSpy.ScyllaHide {
 
 		private static void StartScyllaDide(ulong proccessId) {
             string scyllaProg = @"C:\MyPrograms\ScyllaHide\InjectorCLIx64.exe";
+
             main.Post(o => { MsgBox.Instance.Show("process ID + " + proccessId); } ,null);
+
 			ProcessStartInfo startInfo = new ProcessStartInfo();
 			startInfo.FileName = scyllaProg;
 			string dll = @"C:\MyPrograms\ScyllaHide\HookLibraryx64.dll";	
