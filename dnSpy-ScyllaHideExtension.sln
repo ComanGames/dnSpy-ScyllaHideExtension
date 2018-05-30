@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnSpy.ScyllaHide.Extension", "dnSpy.ScyllaHide.Extenstion\dnSpy.ScyllaHide.Extension.csproj", "{A2236119-6801-4240-98CF-32E6D408FD5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1.Extension", "Example1.Extension\Example1.Extension.csproj", "{B24AAB0F-CA85-4D85-8B46-10D634896E2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2.Extension", "Example2.Extension\Example2.Extension.csproj", "{4613C8A1-28DC-4586-9F9B-D201864CFE1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IniAndUI", "IniAndUI", "{B15402F8-79E6-4B3F-BFC9-0B5DBC386A16}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GenertingCodeForPameters", "ParsingIniFile\GenertingCodeForPameters\GenertingCodeForPameters.pyproj", "{0FC82FD1-8C35-48F7-B825-10A4D7FC8156}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTesing", "ParsingIniFile\MakingWpf\WpfTesing.csproj", "{B00B8527-A8D9-4009-A458-2B5E222824EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingFromIni", "ParsingIniFile\ReadingFromIni\ReadingFromIni.csproj", "{85303FD6-4FC9-4DBD-9537-919AD53461BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLogicAndUi", "ParsingIniFile\WpfLogicAndUi\WpfLogicAndUi.csproj", "{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2236119-6801-4240-98CF-32E6D408FD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2236119-6801-4240-98CF-32E6D408FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2236119-6801-4240-98CF-32E6D408FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2236119-6801-4240-98CF-32E6D408FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC82FD1-8C35-48F7-B825-10A4D7FC8156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC82FD1-8C35-48F7-B825-10A4D7FC8156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00B8527-A8D9-4009-A458-2B5E222824EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00B8527-A8D9-4009-A458-2B5E222824EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00B8527-A8D9-4009-A458-2B5E222824EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00B8527-A8D9-4009-A458-2B5E222824EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85303FD6-4FC9-4DBD-9537-919AD53461BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85303FD6-4FC9-4DBD-9537-919AD53461BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85303FD6-4FC9-4DBD-9537-919AD53461BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85303FD6-4FC9-4DBD-9537-919AD53461BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0FC82FD1-8C35-48F7-B825-10A4D7FC8156} = {B15402F8-79E6-4B3F-BFC9-0B5DBC386A16}
+		{B00B8527-A8D9-4009-A458-2B5E222824EF} = {B15402F8-79E6-4B3F-BFC9-0B5DBC386A16}
+		{85303FD6-4FC9-4DBD-9537-919AD53461BC} = {B15402F8-79E6-4B3F-BFC9-0B5DBC386A16}
+		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE} = {B15402F8-79E6-4B3F-BFC9-0B5DBC386A16}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E106970-95BE-4D1C-BE61-C42276B71B5F}
+	EndGlobalSection
+EndGlobal

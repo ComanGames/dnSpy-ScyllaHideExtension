@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="WpfLogicAndUi.SettingsPageLayout"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:system1="clr-namespace:System;assembly=mscorlib"
+             xmlns:wpfLogicAndUi="clr-namespace:WpfLogicAndUi"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <system1:Boolean x:Key="True">True</system1:Boolean>
+        <system1:Boolean x:Key="False">False</system1:Boolean>
+        <wpfLogicAndUi:RadioToInt x:Key="radioToInt" />
+    </UserControl.Resources>
+    <Grid>
+        <GroupBox Header="Profile" HorizontalAlignment="Left" Height="58" Margin="10,10,0,0" VerticalAlignment="Top" Width="562">
+            <Grid >
+                <ComboBox HorizontalAlignment="Left" Margin="66,6,0,0" VerticalAlignment="Top" Width="351"  ItemsSource="{Binding Profiles}" SelectedIndex="{Binding SelectedProfileIndex , Mode=TwoWay}"/>
+                <Label Content="Loaded:" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="58"/>
+                <Button Content="Create new profile..." HorizontalAlignment="Left" Margin="422,6,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click"  />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Misc" HorizontalAlignment="Left" Height="556" Margin="388,143,0,0"
+                      VerticalAlignment="Top" Width="184">
+
+
+            <Grid>
+                <CheckBox Content="Kill Anti-Attach" HorizontalAlignment="Left" Margin="17,11,0,0"
+                              VerticalAlignment="Top" Width="148" IsChecked="{Binding KillAntiAttach}" />
+                <CheckBox Content="handleExceptionPrint" HorizontalAlignment="Left" Margin="17,31,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionPrint}"/>
+                <CheckBox Content="handleExceptionRip" HorizontalAlignment="Left" Margin="17,51,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionRip}"/>
+                <CheckBox Content="handleExceptionIllegalInstruction" HorizontalAlignment="Left" Margin="17,71,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionIllegalInstruction}"/>
+                <CheckBox Content="handleExceptionInvalidLockSequence" HorizontalAlignment="Left" Margin="17,91,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionInvalidLockSequence}"/>
+                <CheckBox Content="handleExceptionNoncontinuableException" HorizontalAlignment="Left" Margin="17,111,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionNoncontinuableException}"/>
+                <CheckBox Content="handleExceptionAssertionFailure" HorizontalAlignment="Left" Margin="17,131,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionAssertionFailure}"/>
+                <CheckBox Content="handleExceptionBreakpoint" HorizontalAlignment="Left" Margin="17,151,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionBreakpoint}"/>
+                <CheckBox Content="handleExceptionGuardPageViolation" HorizontalAlignment="Left" Margin="17,171,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionGuardPageViolation}"/>
+                <CheckBox Content="handleExceptionWx86Breakpoint" HorizontalAlignment="Left" Margin="17,191,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding handleExceptionWx86Breakpoint}"/>
+                <CheckBox Content="AutostartServer" HorizontalAlignment="Left" Margin="17,211,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding AutostartServer}"/>
+                <CheckBox Content="BreakOnTLS" HorizontalAlignment="Left" Margin="17,231,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding BreakOnTLS}"/>
+                <CheckBox Content="FixOllyBugs" HorizontalAlignment="Left" Margin="17,251,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding FixOllyBugs}"/>
+                <CheckBox Content="RemoveEPBreak" HorizontalAlignment="Left" Margin="17,271,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding RemoveEPBreak}"/>
+                <CheckBox Content="SkipEPOutsideCode" HorizontalAlignment="Left" Margin="17,291,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding SkipEPOutsideCode}"/>
+                <CheckBox Content="X64Fix" HorizontalAlignment="Left" Margin="17,311,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding X64Fix}"/>
+                <CheckBox Content="advancedGoto" HorizontalAlignment="Left" Margin="17,331,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding advancedGoto}"/>
+                <CheckBox Content="ignoreBadPEImage" HorizontalAlignment="Left" Margin="17,351,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding ignoreBadPEImage}"/>
+                <CheckBox Content="skipCompressedDoAnalyze" HorizontalAlignment="Left" Margin="17,371,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding skipCompressedDoAnalyze}"/>
+                <CheckBox Content="skipCompressedDoNothing" HorizontalAlignment="Left" Margin="17,391,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding skipCompressedDoNothing}"/>
+                <CheckBox Content="skipLoadDllDoLoad" HorizontalAlignment="Left" Margin="17,411,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding skipLoadDllDoLoad}"/>
+                <CheckBox Content="skipLoadDllDoNothing" HorizontalAlignment="Left" Margin="17,431,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding skipLoadDllDoNothing}"/>
+                <CheckBox Content="advancedInfobar" HorizontalAlignment="Left" Margin="17,451,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding advancedInfobar}"/>
+                <Label Content="WindowTitle" HorizontalAlignment="Left" Margin="0,471,0,0" VerticalAlignment="Top" Width="79" />
+                <TextBox HorizontalAlignment="Left" Height="20" Margin="84,473,0,0" TextWrapping="Wrap" Text="{Binding WindowTitle}" VerticalAlignment="Top" Width="78" />
+                <Label Content="ServerPort" HorizontalAlignment="Left" Margin="0,497,0,0" VerticalAlignment="Top" Width="66" />
+                <TextBox HorizontalAlignment="Left" Height="20" Margin="84,498,0,0" TextWrapping="Wrap" Text="{Binding ServerPort}" VerticalAlignment="Top" Width="78" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="SpecialHooks" HorizontalAlignment="Left" Height="65" Margin="388,73,0,0" VerticalAlignment="Top" Width="184">
+            <Grid>
+                <CheckBox Content="PreventThreadCreation" HorizontalAlignment="Left" Margin="4,3,0,0"
+                          VerticalAlignment="Top" Width="148" IsChecked="{Binding PreventThreadCreation}" />
+                <CheckBox Content="Run PE Unpacker" HorizontalAlignment="Left" Margin="4,23,0,0"
+                    VerticalAlignment="Top" Width="148" IsChecked="{Binding RunPeUnpacker}" />
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Timing Hooks" HorizontalAlignment="Left" Height="151" Margin="199,181,0,0" VerticalAlignment="Top" Width="184">
+            <Grid>
+                <CheckBox Content="GetTickCountHook" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding GetTickCountHook}"/>
+                <CheckBox Content="GetTickCount64Hook" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding GetTickCount64Hook}"/>
+                <CheckBox Content="GetLocalTimeHook" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding GetLocalTimeHook}"/>
+                <CheckBox Content="GetSystemTimeHook" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding GetSystemTimeHook}"/>
+                <CheckBox Content="NtQuerySystemTimeHook" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="162" IsChecked="{Binding NtQuerySystemTimeHook}"/>
+                <CheckBox Content="NtQueryPerformanceCounterHook" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtQueryPerformanceCounterHook}"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Dll Injection" HorizontalAlignment="Left" Height="84" Margin="199,337,0,0" VerticalAlignment="Top" Width="184">
+            <Grid>
+                <CheckBox Content="DLLUnload" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding DLLUnload}"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="no Name" HorizontalAlignment="Left" Height="498" Margin="10,73,0,0" VerticalAlignment="Top" Width="184">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="38*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="     - PebBeingDebugged" HorizontalAlignment="Left" Margin="0,23,-28,0" VerticalAlignment="Top" Width="200" IsChecked="{Binding PebBeingDebugged}"  Grid.ColumnSpan="2"/>
+                <CheckBox Content="     - PebHeapFlags" HorizontalAlignment="Left" Margin="0,43,-28,0" VerticalAlignment="Top" Width="200" IsChecked="{Binding PebHeapFlags}"  Grid.ColumnSpan="2"/>
+                <CheckBox Content="     - PebNtGlobalFlag" HorizontalAlignment="Left" Margin="0,63,-28,0" VerticalAlignment="Top" Width="200" IsChecked="{Binding PebNtGlobalFlag}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="     - PebStartupInfo" HorizontalAlignment="Left" Margin="0,83,-28,0" VerticalAlignment="Top" Width="200" IsChecked="{Binding PebStartupInfo}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="Hide from PEB" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="169" IsChecked="{Binding HideFromPeb, Mode=TwoWay}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="BlockInputHook" HorizontalAlignment="Left" Margin="0,263,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding BlockInputHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtCreateThreadExHook" HorizontalAlignment="Left" Margin="0,223,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtCreateThreadExHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtQueryInformationProcessHook" HorizontalAlignment="Left" Margin="0,163,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtQueryInformationProcessHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtQueryObjectHook" HorizontalAlignment="Left" Margin="0,183,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtQueryObjectHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtQuerySystemInformationHook" HorizontalAlignment="Left" Margin="0,143,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtQuerySystemInformationHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtSetDebugFilterStateHook" HorizontalAlignment="Left" Margin="0,343,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtSetDebugFilterStateHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtSetInformationThreadHook" HorizontalAlignment="Left" Margin="0,103,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtSetInformationThreadHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtUserBuildHwndListHook" HorizontalAlignment="Left" Margin="0,303,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtUserBuildHwndListHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtUserFindWindowExHook" HorizontalAlignment="Left" Margin="0,283,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtUserFindWindowExHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtUserQueryWindowHook" HorizontalAlignment="Left" Margin="0,323,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtUserQueryWindowHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtYieldExecutionHook" HorizontalAlignment="Left" Margin="0,203,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtYieldExecutionHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="OutputDebugStringHook" HorizontalAlignment="Left" Margin="0,243,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding OutputDebugStringHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtSetInformationProcessHook" HorizontalAlignment="Left" Margin="0,123,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtSetInformationProcessHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="NtCloseHook" HorizontalAlignment="Left" Margin="0,362,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtCloseHook}" Grid.ColumnSpan="2"/>
+                <CheckBox Content="RemoveDebugPrivileges" HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding RemoveDebugPrivileges}" Grid.ColumnSpan="2"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="DRx Protection" HorizontalAlignment="Left" Height="108" Margin="199,73,0,0" VerticalAlignment="Top" Width="184">
+            <Grid>
+                <CheckBox Content="KiUserExceptionDispatcherHook" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding KiUserExceptionDispatcherHook}"/>
+                <CheckBox Content="NtContinueHook" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtContinueHook}"/>
+                <CheckBox Content="NtGetContextThreadHook" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtGetContextThreadHook}"/>
+                <CheckBox Content="NtSetContextThreadHook" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="148" IsChecked="{Binding NtSetContextThreadHook}"/>
+            </Grid>
+        </GroupBox>
+        <RadioButton GroupName="BooleanGroup" Content="DllNormal" IsChecked="{Binding DllInectionTypeIsNormal, Converter={StaticResource radioToInt}, ConverterParameter={StaticResource True},Mode=TwoWay}"  HorizontalAlignment="Left" Margin="219,360,0,0" VerticalAlignment="Top"/>
+        <RadioButton GroupName="BooleanGroup" Content="DllStealth" IsChecked="{Binding DllInectionTypeIsNormal, Converter={StaticResource radioToInt}, ConverterParameter={StaticResource False},Mode=TwoWay}"  HorizontalAlignment="Left" Margin="219,380,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

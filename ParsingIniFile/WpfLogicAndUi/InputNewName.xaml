@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfLogicAndUi.InputNewName"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Height="94.423" Width="311.72" Title="New profile name ?">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="New Profile Name" />
+            <TextBox x:Name="ResponseTextBox" />
+            <Button Content="OK" Click="OKButton_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
