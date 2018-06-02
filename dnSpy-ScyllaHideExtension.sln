@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadingFromIni", "ParsingIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLogicAndUi", "ParsingIniFile\WpfLogicAndUi\WpfLogicAndUi.csproj", "{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebbugingDetttectionTesting", "DebbugingDetttectionTesting\DebbugingDetttectionTesting.csproj", "{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D16E6D48-6A01-4B2B-9CA3-3B3DC1E9FCCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
