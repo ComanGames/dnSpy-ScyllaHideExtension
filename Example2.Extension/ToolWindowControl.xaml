@@ -10,7 +10,6 @@
     <!-- InitDataTemplateAP.Initialize will initialize the context menu to prevent the default
          tool window context menu from showing. -->
     <Grid
-        mvvm:InitDataTemplateAP.Initialize="True"
         Background="Transparent"
         >
         <Grid.RowDefinitions>

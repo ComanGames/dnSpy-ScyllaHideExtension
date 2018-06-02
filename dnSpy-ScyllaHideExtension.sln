@@ -5,10 +5,6 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dnSpy.ScyllaHide.Extension", "dnSpy.ScyllaHide.Extenstion\dnSpy.ScyllaHide.Extension.csproj", "{A2236119-6801-4240-98CF-32E6D408FD5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example1.Extension", "Example1.Extension\Example1.Extension.csproj", "{B24AAB0F-CA85-4D85-8B46-10D634896E2A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2.Extension", "Example2.Extension\Example2.Extension.csproj", "{4613C8A1-28DC-4586-9F9B-D201864CFE1A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IniAndUI", "IniAndUI", "{B15402F8-79E6-4B3F-BFC9-0B5DBC386A16}"
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "GenertingCodeForPameters", "ParsingIniFile\GenertingCodeForPameters\GenertingCodeForPameters.pyproj", "{0FC82FD1-8C35-48F7-B825-10A4D7FC8156}"
@@ -31,14 +27,6 @@ Global
 		{A2236119-6801-4240-98CF-32E6D408FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2236119-6801-4240-98CF-32E6D408FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2236119-6801-4240-98CF-32E6D408FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B24AAB0F-CA85-4D85-8B46-10D634896E2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0FC82FD1-8C35-48F7-B825-10A4D7FC8156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FC82FD1-8C35-48F7-B825-10A4D7FC8156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B00B8527-A8D9-4009-A458-2B5E222824EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

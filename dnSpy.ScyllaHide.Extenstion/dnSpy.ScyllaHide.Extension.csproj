@@ -79,5 +79,11 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParsingIniFile\WpfLogicAndUi\WpfLogicAndUi.csproj">
+      <Project>{d16e6d48-6a01-4b2b-9ca3-3b3dc1e9fcce}</Project>
+      <Name>WpfLogicAndUi</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
