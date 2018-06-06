@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLogicAndUi", "ParsingIni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebbugingDetttectionTesting", "DebbugingDetttectionTesting\DebbugingDetttectionTesting.csproj", "{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryingInjectUsingExternalDll", "TryingInjectUsingExternalDll\TryingInjectUsingExternalDll.csproj", "{DE252198-D44C-4563-8D9E-0B7041F58B0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2.Extension", "Example2.Extension\Example2.Extension.csproj", "{4613C8A1-28DC-4586-9F9B-D201864CFE1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FDE7DA-AF85-47E4-86BF-6F74E8FFFDD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE252198-D44C-4563-8D9E-0B7041F58B0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE252198-D44C-4563-8D9E-0B7041F58B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE252198-D44C-4563-8D9E-0B7041F58B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE252198-D44C-4563-8D9E-0B7041F58B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4613C8A1-28DC-4586-9F9B-D201864CFE1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

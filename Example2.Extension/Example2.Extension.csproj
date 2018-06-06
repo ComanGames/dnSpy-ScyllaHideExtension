@@ -33,6 +33,15 @@
     <NoWarn>1685</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dnlib">
+      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="dnSpy.Contracts.DnSpy">
+      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Contracts.DnSpy.dll</HintPath>
+    </Reference>
+    <Reference Include="dnSpy.Contracts.Logic">
+      <HintPath>..\..\..\..\..\MyPrograms\dnSpy\dnSpy.Contracts.Logic.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -59,20 +68,6 @@
   <ItemGroup>
     <None Include="project.json" />
     <None Include="README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\dnSpy\dnSpy.Contracts.DnSpy\dnSpy.Contracts.DnSpy.csproj">
-      <Project>{cb6f6372-9479-41e2-83a8-07854326bca8}</Project>
-      <Name>dnSpy.Contracts.DnSpy</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\dnSpy\dnSpy.Contracts.Logic\dnSpy.Contracts.Logic.csproj">
-      <Project>{bb748e78-376f-429a-8d83-9a8946ec179f}</Project>
-      <Name>dnSpy.Contracts.Logic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Libraries\dnlib\src\dnlib.csproj">
-      <Project>{fdfc1237-143f-4919-8318-4926901f4639}</Project>
-      <Name>dnlib</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Page Include="Themes\resourcedict.xaml">

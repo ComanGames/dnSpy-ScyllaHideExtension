@@ -1,8 +1,12 @@
 ﻿using System.ComponentModel.Composition;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using dnSpy.Contracts.App;
 using dnSpy.Contracts.Debugger;
+using dnSpy.Contracts.Text;
+using Example2.Extension;
 
 namespace dnSpy.ScyllaHide {
 
@@ -23,14 +27,27 @@ namespace dnSpy.ScyllaHide {
 		    main = SynchronizationContext.Current;
 			Instance = this;
 
-//			dbgManager.IsRunningChanged += (sender, message) => { ShowCountOfProcesses(dbgManager); };
-			dbgManager.Message += (sender, args) => { ShowCountOfProcesses(dbgManager,args); };
+//			dbgManager.IsRunningChanged += (sender, message) => { MessageFromDbg(dbgManager); };
+			dbgManager.Message += (sender, args) => { MessageFromDbg(dbgManager,args); };
+		}
+
+		private void MyCustomMethod(DbgManager dbgManager, DbgCollectionChangedEventArgs<DbgProcess> args)
+		{
+			throw new System.NotImplementedException();
 		}
 
 		private static int order;
-		private static void ShowCountOfProcesses(DbgManager dbgManager, DbgMessageEventArgs message)
+		private static void MessageFromDbg(DbgManager dbgManager, DbgMessageEventArgs message)
 		{
 
+			MyLogger.Instance.WriteLine($"We have message type {message.Kind.ToString()}");
+			if (message.Kind == DbgMessageKind.ModuleLoaded)
+			{
+				DbgMessageModuleLoadedEventArgs moduleLoaded = (DbgMessageModuleLoadedEventArgs) message;
+				MyLogger.Instance.WriteLine($"ModuleLoaded: {moduleLoaded.Module.Filename}");
+
+
+			}
 			if (!Instance.ProgrammSettings.IsEnabledOption)
 				return;
 				
@@ -39,7 +56,6 @@ namespace dnSpy.ScyllaHide {
 				{
 					ulong pid = dbgManager.Processes[i].Id;
 					StartScyllaDide(pid);
-					
 				}
 			}
 		}
@@ -51,12 +67,23 @@ namespace dnSpy.ScyllaHide {
 
 //            main.Post(o => { MsgBox.Instance.Show(currentDirectory); } ,null);
 
+//			injectDll((int) proccessId, dll);
+			InjectUsingProgram(proccessId, scyllaProg, dll);
+		}
+
+		private static void InjectUsingProgram(ulong proccessId, string scyllaProg, string dll)
+		{
 			ProcessStartInfo startInfo = new ProcessStartInfo();
 			startInfo.FileName = scyllaProg;
 			startInfo.Arguments = $"pid:{proccessId} {dll}";
 			startInfo.CreateNoWindow = true;
-            Process.Start(startInfo);
 
-            }
+			Thread newThrad = new Thread(() => { Process.Start(startInfo); });
+			newThrad.Start();
+		}
+
+		[DllImport("ScyllaHideGenericPluginx64.dll")]
+		private static extern bool injectDll(int processId,string dllPath);
+
 	}
-	} 
+} 
