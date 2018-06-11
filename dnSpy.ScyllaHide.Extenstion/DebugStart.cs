@@ -13,7 +13,7 @@ namespace dnSpy.ScyllaHide {
 
 
 	[Export(typeof(IDbgManagerStartListener))]
-	sealed class DebugStart : IDbgManagerStartListener
+	sealed class DebugStart : IDbgManagerStartListener 
 	{
 		public static SynchronizationContext main;
 		public static DbgManager dbg;
@@ -24,7 +24,8 @@ namespace dnSpy.ScyllaHide {
 
 		public void OnStart(DbgManager dbgManager) {
 
-            dbg = dbgManager;
+			MyLogger.Instance.WriteLine(TextColor.Red, $"Dbg Manager is OnStart");
+			dbg = dbgManager;
 		    main = SynchronizationContext.Current;
 			Instance = this;
 
