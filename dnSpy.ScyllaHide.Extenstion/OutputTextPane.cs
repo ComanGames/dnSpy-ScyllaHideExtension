@@ -33,7 +33,7 @@ namespace Example2.Extension {
 		sealed class InitializeLogger : IAutoLoaded {
 			[ImportingConstructor]
 			InitializeLogger(IOutputService outputService) {
-				Instance = outputService.Create(THE_GUID, "My Logger");
+				Instance = outputService.Create(THE_GUID, "Sccylla hide info ");
 				Instance.WriteLine("Logger initialized!");
 			}
 		}
