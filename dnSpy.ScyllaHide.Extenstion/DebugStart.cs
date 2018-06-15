@@ -2,12 +2,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using dnSpy.Contracts.App;
 using dnSpy.Contracts.Debugger;
 using dnSpy.Contracts.Text;
-using Example2.Extension;
 
 namespace dnSpy.ScyllaHide {
 
@@ -29,13 +25,23 @@ namespace dnSpy.ScyllaHide {
 		    main = SynchronizationContext.Current;
 			Instance = this;
 
-//			dbgManager.IsRunningChanged += (sender, message) => { MessageFromDbg(dbgManager); };
+			dbgManager.IsRunningChanged += (sender, message) => { EventOnDbgManager("IsRuningChanged"); };
+			dbgManager.IsDebuggingChanged += (sender, message) => { EventOnDbgManager("IsDebugingChanged"); };
+			dbgManager.DebugTagsChanged += (sender, message) => { EventOnDbgManager("DebugTags " +message.Objects[0]); };
+			dbgManager.DbgManagerMessage += (sender, message) => { EventOnDbgManager("DebugManagerMessage"); };
+			dbgManager.CurrentRuntimeChanged += (sender, message) => { EventOnDbgManager("CurrentRuntimeChanged"); };
+			dbgManager.ProcessesChanged += (sender, message) => { EventOnDbgManager("ProcessChanged"); };
+			dbgManager.CurrentProcessChanged += (sender, message) => { EventOnDbgManager("CurrentProcessChanged"); };
 			dbgManager.Message += (sender, args) => { MessageFromDbg(dbgManager,args); };
+		}
+
+		private void EventOnDbgManager(string text)
+		{
+			MyLogger.Instance.WriteLine(TextColor.Red,text);
 		}
 
 		private void MyCustomMethod(DbgManager dbgManager, DbgCollectionChangedEventArgs<DbgProcess> args)
 		{
-			throw new System.NotImplementedException();
 		}
 
 		private static int order;
@@ -57,7 +63,7 @@ namespace dnSpy.ScyllaHide {
 			if (dbgManager.Processes.Length>0) {
 				for (int i = 0; i < dbgManager.Processes.Length; i++)
 				{
-					ulong pid = dbgManager.Processes[i].Id;
+					int pid = dbgManager.Processes[i].Id;
 					StartScyllaDide(pid,dbgManager,message);
 					MyLogger.Instance.WriteLine(TextColor.Red, $"PointerSize = {dbgManager.Processes[i].PointerSize}");
 
@@ -65,7 +71,7 @@ namespace dnSpy.ScyllaHide {
 			}
 		}
 
-		private static void StartScyllaDide(ulong proccessId, DbgManager dbgManager, DbgMessageEventArgs mesage)
+		private static void StartScyllaDide(int proccessId, DbgManager dbgManager, DbgMessageEventArgs mesage)
 		{
 
 			switch (mesage.Kind)

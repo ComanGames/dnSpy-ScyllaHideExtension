@@ -9,7 +9,7 @@ using dnSpy.Contracts.Text;
 // Creates an Output window text pane where our log messages will go.
 // Adds context menu commands.
 
-namespace Example2.Extension {
+namespace dnSpy.ScyllaHide {
 	// Holds an instance of our logger text pane
 	static class MyLogger {
 		public static readonly Guid THE_GUID = new Guid("8821A749-298B-4384-8281-5EEC64A562F7");
